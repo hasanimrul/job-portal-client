@@ -12,7 +12,7 @@ const Home = () => {
         <div>
             <Toggle />
             <div>
-                <h1 className='text-2xl font-bold'>Fresher's Job Suggestion</h1>
+                <h1 className='text-2xl font-bold'>Fresher's Job Suggestions</h1>
                 <div className="divider mx-[30%] mt-0"></div>
                 <div className='flex flex-col gap-5 mx-20'>
                     {
@@ -25,7 +25,7 @@ const Home = () => {
                 <button className="btn btn-primary mt-5">See All Job</button>
             </div>
             <div>
-                <h1 className='text-2xl font-bold'>Experience Job Suggestion</h1>
+                <h1 className='text-2xl font-bold mt-10'>Experience Job Suggestions</h1>
                 <div className="divider mx-[30%] mt-0"></div>
                 <div className='flex flex-col gap-5 mx-20'>
                     {
