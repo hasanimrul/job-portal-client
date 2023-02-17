@@ -10,7 +10,7 @@ const TopIT = () => {
                 <div className="card bg-fuchsia-200 shadow-xl">
                     <div className="card-body">
                         <h2 className="card-title">Brain Station 23 Ltd.</h2>
-                        <p>If a dog chews shoes whose shoes does he choose?</p>
+                        <p>Phone: 01404-055220</p>
                         <div className="card-actions justify-end">
                             <button className="btn btn-primary">See Details</button>
                         </div>
@@ -19,7 +19,7 @@ const TopIT = () => {
                 <div className="card bg-lime-200 shadow-xl">
                     <div className="card-body">
                         <h2 className="card-title">NEXT Venture</h2>
-                        <p>If a dog chews shoes whose shoes does he choose?</p>
+                        <p>Phone: 01648-903948</p>
                         <div className="card-actions justify-end">
                             <button className="btn btn-primary">See Details</button>
                         </div>
@@ -28,7 +28,39 @@ const TopIT = () => {
                 <div className="card bg-green-200 shadow-xl">
                     <div className="card-body">
                         <h2 className="card-title">TigerIT Bangladesh LTD.</h2>
-                        <p>If a dog chews shoes whose shoes does he choose?</p>
+                        <p> Phone: 02-8826716</p>
+                        <div className="card-actions justify-end">
+                            <button className="btn btn-primary">See Details</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <h2 className='text-left text-2xl my-10'>International Top 3 IT Companies</h2>
+            <div className='grid grid-cols-3 gap-5'>
+                <div className="card bg-fuchsia-200 shadow-xl">
+                    <div className="card-body">
+                        <h2 className="card-title">Microsoft Corporation</h2>
+                        <p>Technology corporation</p>
+                        <div className="card-actions justify-end">
+                            <button className="btn btn-primary">See Details</button>
+                        </div>
+                    </div>
+                </div>
+                <div className="card bg-lime-200 shadow-xl">
+                    <div className="card-body">
+                        <h2 className="card-title">IBM</h2>
+                        <p>Technology corporation
+                        </p>
+                        <div className="card-actions justify-end">
+                            <button className="btn btn-primary">See Details</button>
+                        </div>
+                    </div>
+                </div>
+                <div className="card bg-green-200 shadow-xl">
+                    <div className="card-body">
+                        <h2 className="card-title">Oracle</h2>
+                        <p> Computer software company</p>
                         <div className="card-actions justify-end">
                             <button className="btn btn-primary">See Details</button>
                         </div>
