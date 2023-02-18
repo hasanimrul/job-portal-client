@@ -169,6 +169,18 @@ const Navbar = () => {
                                     {item.name}
                                 </Disclosure.Button>
                             ))}
+                            {
+                                user?.email ?
+                                    <Link onClick={handleLogOut} to='/sign-in' className='text-gray-300 hover:bg-gray-700 hover:text-white
+                                                    px-3 py-2 rounded-md text-sm font-medium'>
+                                        Sign Out
+                                    </Link>
+                                    :
+                                    <Link to='/sign-in' className='text-gray-300 hover:bg-gray-700 hover:text-white
+                                                    px-3 py-2 rounded-md text-sm font-medium'>
+                                        Sign in
+                                    </Link>
+                            }
                         </div>
                     </Disclosure.Panel>
                 </>
