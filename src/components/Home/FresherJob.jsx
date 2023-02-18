@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const FresherJob = ({ fresher }) => {
     return (
@@ -19,7 +20,7 @@ const FresherJob = ({ fresher }) => {
                             {fresher.location}</p>
                     </div>
                     <div className="card-actions justify-end">
-                        <button className="btn btn-primary">Apply Now</button>
+                        <Link to='/sign-in' className="btn btn-primary">Apply Now</Link>
                     </div>
                 </div>
             </div>

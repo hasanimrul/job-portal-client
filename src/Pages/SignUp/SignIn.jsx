@@ -1,13 +1,38 @@
-import React from 'react';
+import { GoogleAuthProvider } from 'firebase/auth';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Routes/AuthProvider';
 
 const SignIn = () => {
 
+    const { signIn, providerLogin, setUSer } = useContext(AuthContext)
+
+    const googleProvider = new GoogleAuthProvider()
+
     const handleSubmit = event => {
+        event.preventDefault()
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
 
+        signIn(email, password)
+            .then(res => {
+                const user = res.user
+                console.log(user);
+                form.reset()
+            })
+            .catch(e => {
+                console.error(e)
+            })
     }
-    const handleGoogleSignIn = () => {
-
+    const handleGoogleSignIn = (provider) => {
+        providerLogin(googleProvider)
+            .then(res => {
+                const user = res.user
+                console.log(user);
+                setUSer(user)
+            })
+            .catch(error => console.error(error))
     }
 
     return (
@@ -21,7 +46,7 @@ const SignIn = () => {
                     </a>
                 </div>
                 <div className="w-full px-6 py-4 mt-6 overflow-hidden bg-white shadow-md sm:max-w-lg sm:rounded-lg">
-                    <form>
+                    <form onSubmit={handleSubmit}>
                         <div className="mt-4">
                             <label
                                 htmlFor="email"
@@ -74,6 +99,7 @@ const SignIn = () => {
                     </div>
                     <div className="my-6 space-y-2">
                         <button
+                            onClick={handleGoogleSignIn}
                             aria-label="Login with Google"
                             type="button"
                             className="flex items-center justify-center w-full p-2 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 dark:border-gray-400 focus:ring-violet-400 hover:bg-slate-200"

@@ -1,15 +1,14 @@
-import { Fragment } from 'react'
+import { Fragment, useContext } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Link } from 'react-router-dom'
 import logo from '../../Assets/logo.png'
+import { AuthContext } from '../../Routes/AuthProvider'
 
 const navigation = [
     { name: 'Home', href: '/', current: false },
     { name: 'About', href: '/about', current: false },
     { name: 'Contact Us', href: '/contact-us', current: false },
-    { name: 'Sign In', href: 'sign-in', current: false },
-    { name: 'Sign Out', href: 'sign-out', current: false },
 ]
 
 function classNames(...classes) {
@@ -17,6 +16,13 @@ function classNames(...classes) {
 }
 
 const Navbar = () => {
+    const { user, logOut } = useContext(AuthContext)
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(e => console.error(e))
+    }
     return (
         <Disclosure as="nav" className="bg-neutral text-neutral-content">
             {({ open }) => (
@@ -48,7 +54,7 @@ const Navbar = () => {
                                     />
                                 </a>
                                 <div className="hidden sm:block mx-auto">
-                                    <div className="flex space-x-4">
+                                    <div className="flex space-x-4 items-center">
                                         {navigation.map((item) => (
                                             <Link
                                                 key={item.name}
@@ -62,6 +68,20 @@ const Navbar = () => {
                                                 {item.name}
                                             </Link>
                                         ))}
+                                        {
+                                            user?.email ?
+                                                <Link onClick={handleLogOut} to='/sign-in' className='text-gray-300 hover:bg-gray-700 hover:text-white
+                                                    px-3 py-2 rounded-md text-sm font-medium'>
+                                                    Sign Out
+                                                </Link>
+                                                :
+                                                <Link to='/sign-in' className='text-gray-300 hover:bg-gray-700 hover:text-white
+                                                    px-3 py-2 rounded-md text-sm font-medium'>
+                                                    Sign in
+                                                </Link>
+                                        }
+
+
                                     </div>
                                 </div>
                             </div>
