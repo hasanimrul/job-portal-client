@@ -14,8 +14,8 @@ export const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home />,
-                loader: () => fetch('http://localhost:5000/fresher'),
-                loader: () => fetch('http://localhost:5000/experience')
+                loader: () => fetch('https://job-portal-server-delta.vercel.app/fresher'),
+                loader: () => fetch('https://job-portal-server-delta.vercel.app/experience')
             },
             {
                 path: '/about',
